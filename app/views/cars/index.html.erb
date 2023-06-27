@@ -1,19 +1,8 @@
-
-<% if @cars.any? %>
-
-  <div class="container-cars">
-    <% @cars.each do |car| %>
-        <%= link_to car_path(car) do %>
-        
-          <div class = "cards-car-picture" style="background-image: url('<%= cl_image_path car.picture.key %>')">
-          <div class="card-car-brand">
-            <h2><%= car.brand.upcase %></h2>
-          </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+<div class="container">
+  <h1 class="sub-title>">Nos voitures</h1>
+  <div class="index-car-container">
+    <div class="content-car">
+      <%= render "shared/cars-card" %>
+    </div>
   </div>
-<% else %>
-  <h3 class="error-text-search">Sorry, there are no results.</h3>
-<% end %>
+</div>

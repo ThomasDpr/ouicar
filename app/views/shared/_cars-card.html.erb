@@ -1,0 +1,21 @@
+<div class="card-cars">
+  <% @cars.each do |car| %>
+    <div class="card-car">
+      <%= link_to car_path(car) do %>
+        <div class="card-car-picture" style="background-image: url('<%= cl_image_path car.picture.key %>')">
+          <div class="card-car-brand">
+            <h2><%= car.brand.upcase %></h2>
+          </div>
+        </div>
+
+        <div class="card-car-content">
+          <div class="card-car-bottom">
+            <div class="card-car-price">
+              <p><%= car.price_per_day %>€/jour</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
