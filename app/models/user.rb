@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :cars, foreign_key: :owner_id
   has_many :bookings
 
-  has_one_attached :picture
+  has_one_attached :photo
 end
