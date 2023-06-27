@@ -5,7 +5,6 @@ ruby "3.1.2"
 
 gem "autoprefixer-rails"
 gem "bootsnap", require: false
-gem "bootstrap", "~> 5.2"
 gem "cloudinary"
 gem "colorize"
 gem "devise"

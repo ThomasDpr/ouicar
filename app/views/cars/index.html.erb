@@ -3,7 +3,7 @@
   <div class="container-cars">
     <% @cars.each do |car| %>
       <%= link_to car_path(car) do %>
-        <%= cl_image_tag car.photo.key %>
+        <%= cl_image_tag car.picture.key %>
       <% end %>
     <% end %>
   </div>
