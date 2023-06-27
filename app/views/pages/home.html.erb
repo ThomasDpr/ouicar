@@ -5,11 +5,15 @@
   </div>
 
   <%= simple_form_for :search, url: cars_path, method: :get, html: { class: "search-bar-container" } do |f| %>
+    <button type="submit" class="search-bar-icon">
+      <%= svg_tag "icons/search" %>
+    </button>
+
     <%= f.input :query,
-          input_html: { value: params[:query], class: "search-bar-input", placeholder: "Rechercher une voiture" },
-          label: false,
-          wrapper: false
-    %>
+        input_html: { value: params[:query], class: "search-bar-input", placeholder: "Rechercher une voiture..." },
+        label: false,
+        wrapper: false
+  %>
 
   <% end %>
   <br>

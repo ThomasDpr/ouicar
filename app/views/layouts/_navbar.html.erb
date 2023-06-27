@@ -1,0 +1,67 @@
+<nav class="nav-container">
+  <div class="nav">
+
+    <!-- Section gauche de la barre de navigation -->
+    <div class="nav-left">
+      <%= link_to root_path, class: "logo-container" do %>
+        <%= svg_tag "icons/logo", class: "logo" %>
+      <% end %>
+    </div>
+
+    <!-- Si la page actuelle n'est pas la page d'accueil -->
+    <% unless current_page?(root_path) %>
+
+      <!-- Section du centre de la barre de navigation -->
+      <div class="nav-center">
+
+        <!-- Barre de recherche avec le filtre de date -->
+        <div class="search-with-date">
+
+          <!-- Formulaire de recherche de cars -->
+          <%= simple_form_for :car_filter, url: cars_path, method: :get, html: { class: "search-bar-container" } do |f| %>
+
+            <!-- Boutin d'envoi du formulaire de recherche -->
+            <button type="submit" class="search-bar-icon">
+              <%= svg_tag "icons/search" %>
+            </button>
+
+            <!-- Champ de saisie de la recherche -->
+            <%= text_field_tag :query,
+                        params[:query],
+                        class: "search-bar-input",
+                        placeholder: "Rechercher une voiture"%>
+
+            <!-- Flatpickr pour le filtre de date -->
+            <div class="date-filter-container" data-controller="flatpickr">
+              <div class="search-bar-icon">
+                <%= svg_tag "icons/calendar", class: "calendar-icon" %>
+              </div>
+              <%= f.input :start_date, as: :hidden %>
+              <%= f.input :end_date, as: :hidden %>
+              <input type="text" data-flatpickr-target="flatpickr.input" class="date-filter-input" name="car_filter[start_date]" placeholder="Filtrer par date" value="<%= "#{params[:car_filter][:start_date]} au #{params[:car_filter][:end_date]}" if params[:car_filter] && params[:car_filter][:start_date].present? && params[:car_filter][:end_date].present? %>">
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Section droite de la barre de navigation -->
+    <div class="nav-right">
+
+      <!-- Si l'utilisateur est connecté -->
+      <% if user_signed_in? %>
+        <%= link_to edit_user_registration_path, class: "nav-link" do %>
+          <%= svg_tag "icons/bookmark" %>
+        <% end %>
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" do %>
+          <%= svg_tag "icons/log-out" %>
+        <% end %>
+      <% else %>
+
+        <!-- Si l'utilisateur n'est pas connecté -->
+        <%= link_to "S'inscrire", new_user_registration_path, class: "btn-primary" %>
+        <%= link_to "Se connecter", new_user_session_path, class: "btn-secondary" %>
+      <% end %>
+    </div>
+  </div>
+</nav>
