@@ -1,10 +1,19 @@
+
 <% if @cars.any? %>
 
   <div class="container-cars">
     <% @cars.each do |car| %>
-      <%= link_to car_path(car) do %>
-        <%= cl_image_tag car.photo.key %>
-      <% end %>
+
+      <div class="card-product">
+        <%= link_to car_path(car) do %>
+        
+          <div class = "cards-car-picture" style="background-image: url('<%= cl_image_path car.picture.key %>')">
+          <div class="card-car-brand">
+            <h2><%= car.brand.upcase %></h2>
+          </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 <% else %>

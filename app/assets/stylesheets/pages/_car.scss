@@ -1,0 +1,36 @@
+.container-cars {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  grid-gap: 16px;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+  .card-product {
+    position: relative;
+    height: 225px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: grid;
+
+    .cards-car-picture{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      text-align: end;
+      padding: 1rem;
+    }
+  }
+}
+
+
+
+.error-text-search {
+  color: red;
+  text-align: center;
+}
