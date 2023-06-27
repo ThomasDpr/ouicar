@@ -4,5 +4,5 @@ class Car < ApplicationRecord
 
   has_one_attached :picture
 
-  validates :brand, :description, :color, :price_per_day, :picture, presence: true
+  validates :brand, :description, :color, :price_per_day, presence: true
 end
