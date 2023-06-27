@@ -1,2 +1,12 @@
-<h1>Cars#index</h1>
-<p>Find me in app/views/cars/index.html.erb</p>
+<% if @cars.any? %>
+
+  <div class="container-cars">
+    <% @cars.each do |car| %>
+      <%= link_to car_path(car) do %>
+        <%= cl_image_tag car.photo.key %>
+      <% end %>
+    <% end %>
+  </div>
+<% else %>
+  <h3 class="error-text-search">Sorry, there are no results.</h3>
+<% end %>
