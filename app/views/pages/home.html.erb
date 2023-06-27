@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="hero-banner">
+
+  <div class="logo">
+    <h1 class="logo-text-first">Oui<span class="logo-text-second">Car</span></h1>
+  </div>
+
+  <%= simple_form_for :search, url: cars_path, method: :get, html: { class: "search-bar-container" } do |f| %>
+    <%= f.input :query,
+          input_html: { value: params[:query], class: "search-bar-input", placeholder: "Rechercher une voiture" },
+          label: false,
+          wrapper: false
+    %>
+
+  <% end %>
+  <br>
+  <%= link_to "Toutes les voitures", cars_path, class: "btn-secondary blur" %>
+</div>
