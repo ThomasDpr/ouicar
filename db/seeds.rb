@@ -113,3 +113,40 @@ create_car(
   denver,
   'db/picture/tesla_model_s.jpg'
 )
+
+create_car(
+  'Ford Ranger',
+  'Un superbe Ford Ranger.',
+  'Orange',
+  250,
+  leona,
+  'db/picture/ford_ranger.jpg'
+)
+
+create_car(
+  'Ferrari Dino',
+  'Une super Ferrari Dino.',
+  'Gris',
+  350,
+  leona,
+  'db/picture/ferrari_dino.jpg'
+)
+
+create_car(
+  'Jeep Cherokee',
+  'Une super Jeep Cherokee.',
+  'Gris',
+  250,
+  seyfried,
+  'db/picture/jeep_cherokee.jpg'
+)
+
+
+create_car(
+  'Posche 911',
+  'Une super Posche 911.',
+  'Gris',
+  450,
+  seyfried,
+  'db/picture/porsche_911.jpg'
+)
