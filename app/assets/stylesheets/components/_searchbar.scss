@@ -1,0 +1,68 @@
+.search-bar-container{
+  display: flex;
+  // align-items: center;
+    justify-content: space-between;
+
+
+  padding-inline: 8px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background-color: rgba($color: #000000, $alpha: .5);
+
+  gap: 8px;
+
+
+  .search-bar-input{
+    width: 300px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding-block: 10px;
+    cursor: pointer;
+
+    color: $main-text-color;
+
+    &:focus{
+      outline: none;
+    }
+
+    &::placeholder{
+      color: rgba($color: $main-text-color, $alpha: .5);
+    }
+  }
+  .search-bar-icon{
+    border: none;
+    background: none;
+    color: $main-text-color;
+    display: flex;
+    align-items: center;
+
+    svg{
+      height: 24px;
+      width: 24px;
+    }
+    .calendar-icon {
+      height: 20px;
+      width: 20px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.search-with-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-range {
+  text-align: left;
+  max-width: 225px;
+}
+
+.flatpickr_dates {
+  display: flex;
+  width: 225px;
+}

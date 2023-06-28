@@ -9,6 +9,11 @@
 @import "components/index";
 @import "pages/index";
 
+// Flatpickr theme
+@import "flatpickr/dist/themes/airbnb.css";
+@import 'flatpickr/dist/flatpickr.css';
+
+
 * {
   margin: 0;
   padding: 0;
