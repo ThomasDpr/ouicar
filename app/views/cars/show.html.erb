@@ -1,4 +1,33 @@
-<h1>Cars#show</h1>
-<%=cl_image_tag @car.picture.key, class:"image_show"%>
 
-<p>Find me in app/views/cars/show.html.erb</p>
+<div class= "car-decritpion-container">
+
+  <div class="car-name">
+    <h1><%= @car.brand %></h1>
+  </div>
+
+
+<div class="car-pic-description">
+  <div>
+    <%= cl_image_tag @car.picture.key, class: "image_show" %>
+  </div>
+  <div class="car-description-text">
+    <h1>Description</h1>
+    <br>
+    <p><%= @car.description %></p>
+  </div>
+</div>
+
+
+    <div class="global-car-description">
+      <div class="owner-pic-name">
+        <% if @car.owner.photo.attached? %>
+          <%= cl_image_tag @car.owner.photo.key, class:"owner_photo" %>
+        <% else %>
+          <%= svg_tag 'icons/bookmark.svg', class:"owner_photo" %>
+        <% end %>
+              <p>Propriétaire : <%= @car.owner.first_name %></p>
+      </div>
+      <p>Couleur : <%= @car.color %></p>
+      <p>Prix par jour : <%= @car.price_per_day %>€ / jour</p>
+    </div>
+</div>
