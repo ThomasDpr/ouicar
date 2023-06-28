@@ -1,1 +1,84 @@
-// Specific CSS for your home-page
+/* Specific CSS for your home-page */
+.home-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.catch-entence {
+  color: white;
+  padding-bottom: 20px;
+}
+
+.home-simpleform {
+  padding-bottom: 20px;
+}
+
+.click-all-cars {
+  color: white;
+  padding-bottom: 20px;
+}
+
+/* Style de la barre de recherche */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 205px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Style de l'icône de recherche */
+.search-bar-icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+  outline: none;
+}
+
+/* Style de l'input de recherche */
+.search-bar-input {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+}
+
+/* Placeholder du champ de recherche */
+.search-bar-input::placeholder {
+  color: #888;
+}
+
+/* Animation de focus sur l'input de recherche */
+.search-bar-input:focus {
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+}
+
+
+.btn-design {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-design.blur {
+  filter: blur(0);
+}
+
+.btn-design:hover {
+  background-color: #34495e;
+}
+
+
