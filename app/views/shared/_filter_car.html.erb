@@ -1,0 +1,27 @@
+<div class="nav-center">
+
+  <!-- Barre de recherche avec le filtre de date -->
+  <div class="search-with-date">
+
+    <!-- Formulaire de recherche de festivals -->
+    <%= simple_form_for :car_filter, url: cars_path, method: :get, html: { class: "search-bar-container" } do |f| %>
+
+
+      <!-- Input du champ de date avec flatpickr -->
+      <div class="flatpickr_dates" data-controller="flatpickr">
+        <!-- Bouton d'envoi du formulaire de recherche de date -->
+        <div class="search-bar-icon">
+          <%= svg_tag "icons/calendar", class: "calendar-icon" %>
+        </div>
+        <%= f.input :start_time, as: :hidden %>
+        <%= f.input :end_time, as: :hidden  %>
+        <input type="text" data-flatpickr-target="flatpicker" class= "date-range search-bar-input " name="flatpickr" placeholder="Filtrer par dates" value="<%= "#{params[:festival_filter][:start_time]} au #{params[:festival_filter][:end_time]}" if params[:festival_filter] && params[:festival_filter][:start_time].present? && params[:festival_filter][:end_time].present? %>">
+      </div>
+
+        <%= f.select :brand, Car.distinct.pluck(:brand), { prompt: "Sélectionner une marque" }, { class: "search-bar-select" } %>
+        <%= f.select :color, Car.distinct.pluck(:color), { prompt: "Sélectionner une couleur" }, { class: "search-bar-select" } %>
+
+
+    <% end %>
+  </div>
+</div>

@@ -12,34 +12,26 @@
     <% unless current_page?(root_path) %>
 
       <!-- Section du centre de la barre de navigation -->
-      <div class="nav-center">
+            <div class="nav-center">
 
         <!-- Barre de recherche avec le filtre de date -->
         <div class="search-with-date">
 
-          <!-- Formulaire de recherche de cars -->
+          <!-- Formulaire de recherche de festivals -->
           <%= simple_form_for :car_filter, url: cars_path, method: :get, html: { class: "search-bar-container" } do |f| %>
 
-            <!-- Boutin d'envoi du formulaire de recherche -->
+            <!-- Bouton d'envoi du formulaire de recherche -->
             <button type="submit" class="search-bar-icon">
               <%= svg_tag "icons/search" %>
             </button>
 
-            <!-- Champ de saisie de la recherche -->
+            <!-- Champ de recherche de texte -->
             <%= text_field_tag :query,
-                        params[:query],
-                        class: "search-bar-input",
-                        placeholder: "Rechercher une voiture"%>
+              params[:query],
+              class: "search-bar-input",
+              placeholder: "Rechercher une voiture"
+            %>
 
-            <!-- Flatpickr pour le filtre de date -->
-            <div class="date-filter-container" data-controller="flatpickr">
-              <div class="search-bar-icon">
-                <%= svg_tag "icons/calendar", class: "calendar-icon" %>
-              </div>
-              <%= f.input :start_date, as: :hidden %>
-              <%= f.input :end_date, as: :hidden %>
-              <input type="text" data-flatpickr-target="flatpickr.input" class="date-filter-input" name="car_filter[start_date]" placeholder="Filtrer par date" value="<%= "#{params[:car_filter][:start_date]} au #{params[:car_filter][:end_date]}" if params[:car_filter] && params[:car_filter][:start_date].present? && params[:car_filter][:end_date].present? %>">
-            </div>
           <% end %>
         </div>
       </div>
